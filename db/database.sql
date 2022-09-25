@@ -11,5 +11,5 @@ CREATE TABLE employee(
 
 DESCRIBE employee; --describir como esta formada la tabla
 
-INSERT INTO employee VALUES (1, "Joe", 1000),(2, "Henry", 1000);
+INSERT INTO employee VALUES (1, "Joe", 1000),(2, "Henry", 1000),(3, "Sam", 2500),(4, "Max", 1500);
 

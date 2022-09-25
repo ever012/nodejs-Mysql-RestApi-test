@@ -133,14 +133,16 @@ DB_DATABASE=companydb
 *modificar el archivo package.json y agregar en scripts:
 "start": "node src/index.js",   = en modo de desarrollo se usa dev(npm run dev) pero en modo de produccion uso start
 
-luego git push = enviar los datos al repositorio
+*luego git push = enviar los datos al repositorio
 
+*crear un proyecto en Railway "deploy de github", seleccionar repositorio, luego clic en add variables, esto para crear las variables de entorno para acceder a la base de datos y demas
 
+*abrir una ventana nueva del railway y crear un nuevo proyecto pero dar clic donde dice "provision MYSQL" y esto va a carear una base de datos de bysql
 
+*en la pestaña anterior escribimos las variables de entorno del archivo .env pero con los datos de las variables de provision mysql
+*el PORT no es necesario porque railway lo agrega automaticamente
 
-
-
-
+*luego clic en donde dice "settings" y luego "generate domain"
 
 
 
