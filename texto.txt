@@ -1,0 +1,325 @@
+*los verbose http como GET,POST,PUT,DELETE describe lo que quiero hacer en el servidor
+
+*Express es un framework de NodeJS
+*Railway.app = servicio para subir aplicacion a traves de repositorio de github parecido a heruku
+
+**INICIAR PROYECTO
+npm init -y = crea el package.json donde se guardarán las depedencias y versiones de los archivos
+npm install express = instalar framework express
+
+npm index.js = iniciar el servidor
+
+*cuando se haga un nuevo cambio en el archivo, habrá que reiniciar el servidor por lo que para evitar eso
+*se instala "nodemon" para que el lo haga automaticamente
+
+npm install nodemon -D = instalar nodemon -D(dependencia o desarrollo)
+
+*luego en package.json en la parte de "scripts" agregar
+"dev": "nodemon index.js",
+
+*luego hay que iniciar el servidor usando el siguiente comando:
+npm run dev  = iniciar el servidor usando nodemon
+
+====================================================================================
+**Endpoints o rutas
+
+*crear rutas para que el servidor pueda responder
+
+express tiene las rutas GET,POST,PUT,DELETE
+
+*ejemplo:
+*cuando visite esta ruta verá un mensaje
+app.get('/employess', (req, res) => res.send('obteniendo empleados'));
+app.post('/employess', (req, res) => res.send('creando empleados'));
+app.put('/employess', (req, res) => res.send('actualizando empleados'));
+app.delete('/employess', (req, res) => res.send('eliminando empleados'));
+
+*en el navegador solo se pueden ver las peticiones GET por lo que para ver las demas rutas se usa un "cliente rest" en este caso se usó "Thunder Client" que se instala en visual studio code
+
+*"Thunder Client" se usa para emular la peticion desde una aplicacion movil o web
+
+
+====================================================================================
+**Conexión a MySQL
+
+*crear carpeta "db" y crer archivo database.sql, es un archivo solo para tener de referencia el codigo de la base de datos
+
+
+*conecatar con mysql hay que ir a google y buscar "npm mysql2" e instalar usando los comandos de ahí
+
+npm install --save mysql2 = instar dependencia mysql
+
+*luego hay que crear en la raiz el archivo "db.js" e importar ahí el modulo
+
+
+====================================================================================
+**ROUTES o Rutas del Servidor
+
+*crear carpeta "routes" y crear el archivo [nombreCualquiera].route.js (no es necesario que tenga .route ya que solo es para identificar) ejemplo: employes.route.js
+*crear carpeta "src" = para poner el codigo en diferentes archivos y ser mas ordenado y dentro meter la carpeta src y index.js y db.js
+
+
+====================================================================================
+**Controladores
+
+*crear carpeta "controllers" y dentro crear archivo "[nombreCualquiera].controller.js"(.controller no es necesario ponerlo ya que solo es para identificar), ejmplo: employees.controller.js
+
+
+====================================================================================
+**POST employees
+
+*Se hace el codigo de POST funcional
+
+
+====================================================================================¿
+**GET employees
+
+*se hace el codigo select * from en GET
+
+
+====================================================================================¿
+GET employee by id
+
+
+*se hace el codigo select * from where id = ?
+
+Manejo de errores
+====================================================================================
+**meter el codigo en try catch
+
+
+====================================================================================
+**Not Found route
+
+*escribir el siguiente codigo en index.js
+
+app.use((req, res, next) => {//peticion middleware
+    res.status(404).json({
+        message: "Endpoint not found"
+    }) 
+});
+
+
+
+====================================================================================
+**Variables de Entorno y ser mas ordenado el codigo
+
+npm i dotenv  = permite leer un archivo llamado .env
+
+*luego crear un archivo en la raiz, llamado .env y configurarlo
+
+PORT=3000
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=
+DB_DATABASE=companydb
+
+*cuando este en desarrollo, la nube será la que modifique el archivo y proporcione los datos de forma automatica
+
+
+**luego para ser más ORDENADO hay que pasar todo el codigo menos el listen a un archivo nuevo en src llamado "app.js"
+
+
+====================================================================================
+**Despliegue en Railway
+
+*primero se hace un git init
+*luego git commit -m "mensaje"
+
+*crear un repositorio en github
+*luego git remote add origin [https del repositorio de github]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
