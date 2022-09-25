@@ -121,9 +121,14 @@ DB_DATABASE=companydb
 **luego para ser más ORDENADO hay que pasar todo el codigo menos el listen a un archivo nuevo en src llamado "app.js"
 
 
+====================================================================================
+**Despliegue en Railway
 
+*primero se hace un git init
+*luego git commit -m "mensaje"
 
-
+*crear un repositorio en github
+*luego git remote add origin [https del repositorio de github]
 
 
 
