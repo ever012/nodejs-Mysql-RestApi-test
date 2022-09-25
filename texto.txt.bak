@@ -102,7 +102,7 @@ app.use((req, res, next) => {//peticion middleware
 
 
 ====================================================================================
-**Variables de Entorno
+**Variables de Entorno y ser mas ordenado el codigo
 
 npm i dotenv  = permite leer un archivo llamado .env
 
@@ -115,10 +115,10 @@ DB_USER=root
 DB_PASSWORD=
 DB_DATABASE=companydb
 
-*cuando este en desarrolo la nube será la que modifique el archivo y proporcione los datos de forma automatica
+*cuando este en desarrollo, la nube será la que modifique el archivo y proporcione los datos de forma automatica
 
 
-*luego para ser más ORDENADO hay que pasar todo el codigo menos el listen a un archivo nuevo en src llamado "app.js"
+**luego para ser más ORDENADO hay que pasar todo el codigo menos el listen a un archivo nuevo en src llamado "app.js"
 
 
 
