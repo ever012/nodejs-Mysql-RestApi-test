@@ -130,6 +130,12 @@ DB_DATABASE=companydb
 *crear un repositorio en github
 *luego git remote add origin [https del repositorio de github]
 
+*modificar el archivo package.json y agregar en scripts:
+"start": "node src/index.js",   = en modo de desarrollo se usa dev(npm run dev) pero en modo de produccion uso start
+
+luego git push = enviar los datos al repositorio
+
+
 
 
 
