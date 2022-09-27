@@ -7,16 +7,16 @@ import employeesRouter from './routes/employees.route.js';
 import indexRouter from './routes/index.route.js';
 
 //si el cliente intenta ingresar con una ruta que no existe entonces le aparecerá el siguiente mensaje
+
+const app = express(); //ejecute express
+
+app.use(express.json());  //esto es IMPORTANTE para que las node entienda cuando recibe un json
 app.use((req,res,next)=>{
     res.setHeader('Access-Control-Allow-Origin','*');
     res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
     next(); 
 })
-const app = express(); //ejecute express
-
-app.use(express.json());  //esto es IMPORTANTE para que las node entienda cuando recibe un json
-
 app.use(indexRouter);
 app.use('/api',employeesRouter); //le digo a express que use "employeesRouter"
 
