@@ -16,12 +16,17 @@ app.use('/api',employeesRouter); //le digo a express que use "employeesRouter"
 
 //si el cliente intenta ingresar con una ruta que no existe entonces le aparecerá el siguiente mensaje
 app.use((req, res, next) => {//peticion middleware
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
+app.use((req, res, next) => {//peticion middleware
     res.status(404).json({
         message: "Endpoint not found"
     }) 
 });
-
-
 
 export default app;
 
